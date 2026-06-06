@@ -2,19 +2,21 @@
   "name": "soriya",
   "version": "0.1.0",
   "description": "Client framework for JS apps",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "default": "./dist/index.js"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
-    "build": "tsc"
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/move-cjs.cjs"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
