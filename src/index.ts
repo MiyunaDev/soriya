@@ -11,7 +11,7 @@ export class Soriya {
   public user: UserService;
 
   constructor(config: FrameworkConfig) {
-    if (!config.services.userService || !config.services.notificationService) {
+    if (!config.services.userService) {
       throw new Error('Service URLs must be defined in configuration.');
     }
 
