@@ -16,7 +16,8 @@
   },
   "files": ["dist"],
   "scripts": {
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/move-cjs.cjs"
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/move-cjs.cjs",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
